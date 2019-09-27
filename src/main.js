@@ -5,13 +5,10 @@ const url = 'https://developer.nps.gov/api/v1/parks';
 
 function getParks() {
 
-    const limit = 'limit=1';
-    const stateCodes = '';
+    const limit = document.getElementById('js-max-results').value;
+    const stateCodes = document.getElementById('js-search-term').value;
 
-    fetch(`${url}`, {
-        headers: {
-            "X-Api-Key": apiKey}
-    })
+    fetch(`${url}?api_key=${apiKey}${(stateCodes) ? '&stateCode='+stateCodes : ''}${(limit > 0 && limit <= 50) ? '&limit=' + limit : '&limit=10'}`)
         .then(response => response.json())
         .then(responseJson => console.log(responseJson));
 }

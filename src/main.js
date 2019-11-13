@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 //  blah
 const apiKey = 'qTIaiaU3kkW2zggcusNtaSrGPOiDsMhKF0INjbTH';
 const url = 'https://developer.nps.gov/api/v1/parks';
